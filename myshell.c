@@ -133,6 +133,8 @@ int main(int argc, char** argv) {
                 printf("%s\n", "Invalid argument");
             } 
             else {
+
+                while(waitpid(-1, NULL, WNOHANG) > 0); // clear all zombie processes
                 
                 pid_t pid = fork();
                 
